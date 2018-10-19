@@ -55,6 +55,7 @@ import {
   Upload,
   // version,
   Drawer,
+  Skeleton,
 } from 'antd'
 
 Vue.prototype.$message = message
@@ -107,6 +108,7 @@ Vue.use(Slider)
 Vue.use(Spin)
 Vue.use(Steps)
 Vue.use(Switch)
+Vue.use(Skeleton)
 Vue.use(Table)
 Vue.use(Transfer)
 Vue.use(Tree)
