@@ -58,6 +58,7 @@ const getSlots = (ele) => {
   })
   return slots
 }
+
 const getSlotOptions = (ele) => {
   if (ele.fnOptions) { // 函数式组件
     return ele.fnOptions

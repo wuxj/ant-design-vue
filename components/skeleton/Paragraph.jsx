@@ -6,7 +6,7 @@ const widthUnit = PropTypes.oneOfType([
   PropTypes.string,
 ])
 
-export const SkeletonParagraphProps = {
+const skeletonParagraphProps = {
   prefixCls: PropTypes.string,
   width: PropTypes.oneOfType([
     widthUnit,
@@ -15,8 +15,10 @@ export const SkeletonParagraphProps = {
   rows: PropTypes.number,
 }
 
+export const SkeletonParagraphProps = PropTypes.shape(skeletonParagraphProps)
+
 const Paragraph = {
-  props: initDefaultProps(SkeletonParagraphProps, {
+  props: initDefaultProps(skeletonParagraphProps, {
     prefixCls: 'ant-skeleton-paragraph',
   }),
   methods: {

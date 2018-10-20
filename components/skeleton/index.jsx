@@ -1,18 +1,27 @@
 import classNames from 'classnames'
 import PropTypes from '../_util/vue-types'
 import { initDefaultProps, getOptionProps, hasProp } from '../_util/props-util'
-import Avatar from './Avatar'
-import Title from './Title'
-import Paragraph from './Paragraph'
+import Avatar, { SkeletonAvatarProps } from './Avatar'
+import Title, { SkeletonTitleProps } from './Title'
+import Paragraph, { SkeletonParagraphProps } from './Paragraph'
 
 export const SkeletonProps = {
   active: PropTypes.bool,
   loading: PropTypes.bool,
   prefixCls: PropTypes.string,
   children: PropTypes.any,
-  avatar: PropTypes.any,
-  title: PropTypes.any,
-  paragraph: PropTypes.any,
+  avatar: PropTypes.oneOfType([
+    SkeletonAvatarProps,
+    PropTypes.bool,
+  ]),
+  title: PropTypes.oneOfType([
+    SkeletonTitleProps,
+    PropTypes.bool,
+  ]),
+  paragraph: PropTypes.oneOfType([
+    SkeletonParagraphProps,
+    PropTypes.bool,
+  ]),
 }
 
 function getComponentProps (prop) {
@@ -73,7 +82,6 @@ const Skeleton = {
       loading, prefixCls,
       avatar, title, paragraph, active,
     } = getOptionProps(this)
-
     if (loading || !hasProp(this, 'loading')) {
       const hasAvatar = !!avatar
       const hasTitle = !!title
@@ -150,8 +158,7 @@ const Skeleton = {
         </div>
       )
     }
-
-    return this.$slots.default
+    return this.$slots.default && this.$slots.default[0]
   },
 }
 /* istanbul ignore next */

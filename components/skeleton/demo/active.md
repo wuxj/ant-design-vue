@@ -1,20 +1,16 @@
----
-order: 2
-title:
-  zh-CN: 动画效果
-  en-US: Active Animation
----
-
-## zh-CN
-
+<cn>
+#### 动画效果
 显示动画效果。
+</cn>
 
-## en-US
-
+<us>
+#### Active Animation
 Display active animation.
+</us>
 
-````jsx
-import { Skeleton } from 'antd';
+```html
+<template>
+  <a-skeleton active />
+</template>
+```
 
-ReactDOM.render(<Skeleton active />, mountNode);
-````

@@ -38,9 +38,16 @@ export default {
     return (
       <div>
         <md cn={md.cn} us={md.us}/>
-
+        <br/>
+        <Basic/>
         <br />
         <Complex />
+        <br />
+        <Active />
+        <br />
+        <Children />
+        <br />
+        <List />
         <br/>
         <api>
           <template slot='cn'>
@@ -52,6 +59,4 @@ export default {
     )
   },
 }
-// <br/>
-//         <Basic/>
 </script>

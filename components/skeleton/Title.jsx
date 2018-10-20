@@ -1,17 +1,18 @@
 import PropTypes from '../_util/vue-types'
 import { initDefaultProps, getOptionProps } from '../_util/props-util'
 
-export const SkeletonTitleProps = {
+const skeletonTitleProps = {
   prefixCls: PropTypes.string,
   width: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string,
   ]),
-
 }
 
+export const SkeletonTitleProps = PropTypes.shape(skeletonTitleProps)
+
 const Title = {
-  props: initDefaultProps(SkeletonTitleProps, {
+  props: initDefaultProps(skeletonTitleProps, {
     prefixCls: 'ant-skeleton-title',
   }),
   render () {

@@ -1,53 +1,44 @@
----
-order: 3
-title:
-  zh-CN: 包含子组件
-  en-US: Contains sub component
----
-
-## zh-CN
-
+<cn>
+#### 包含子组件
 加载占位图包含子组件。
+</cn>
 
-## en-US
-
+<us>
+#### Contains sub component
 Skeleton contains sub component.
+</us>
 
-````jsx
-import { Skeleton, Button } from 'antd';
-
-class Demo extends React.Component {
-  state = {
-    loading: false,
-  };
-
-  showSkeleton = () => {
-    this.setState({ loading: true });
-    setTimeout(() => {
-      this.setState({ loading: false });
-    }, 3000);
-  };
-
-  render() {
-    return (
-      <div className="article">
-        <Skeleton loading={this.state.loading}>
-          <div>
-            <h4>Ant Design, a design language</h4>
-            <p>We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.</p>
-          </div>
-        </Skeleton>
-        <Button onClick={this.showSkeleton} disabled={this.state.loading}>
-          Show Skeleton
-        </Button>
+```html
+<template>
+  <div class="article">
+    <a-skeleton :loading="loading">
+      <div>
+        <h4>Ant Design Vue, a design language</h4>
+        <p>We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.</p>
       </div>
-    );
+    </a-skeleton>
+    <a-button @click="showSkeleton" :disabled="loading">
+      Show Skeleton
+    </a-button>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        loading: false,
+      }
+    },
+    methods: {
+      showSkeleton() {
+        this.loading = true
+        setTimeout(() => {
+          this.loading = false
+        }, 3000);
+      }
+    }
   }
-}
-
-ReactDOM.render(<Demo />, mountNode);
-````
-
+</script>
 <style>
 .article h4 {
   margin-bottom: 16px;
@@ -56,3 +47,5 @@ ReactDOM.render(<Demo />, mountNode);
   margin-top: 16px;
 }
 </style>
+```
+
