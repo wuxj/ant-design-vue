@@ -2,14 +2,16 @@ import classNames from 'classnames'
 import PropTypes from '../_util/vue-types'
 import { initDefaultProps, getOptionProps } from '../_util/props-util'
 
-export const SkeletonAvatarProps = {
+const skeletonAvatarProps = {
   prefixCls: PropTypes.string,
   size: PropTypes.oneOf(['large', 'small', 'default']),
   shape: PropTypes.oneOf(['circle', 'square']),
 }
 
+export const SkeletonAvatarProps = PropTypes.shape(skeletonAvatarProps)
+
 const Avatar = {
-  props: initDefaultProps(SkeletonAvatarProps, {
+  props: initDefaultProps(skeletonAvatarProps, {
     prefixCls: 'ant-skeleton-avatar',
     size: 'large',
   }),
