@@ -69,3 +69,5 @@ package-lock.json
 
 # 备份文件
 /components/test/*
+# 暂没实现接口
+components/mention/

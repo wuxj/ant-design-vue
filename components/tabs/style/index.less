@@ -102,9 +102,8 @@
       text-align: center;
       text-transform: none;
 
-      &:before {
+      &-target {
         display: block;
-        font-family: "anticon" !important;
         .iconfont-size-under-12px(10px);
       }
     }
@@ -120,17 +119,10 @@
 
   &-tab-next {
     right: 2px;
-
-    &-icon:before {
-      content: "\e61f";
-    }
   }
 
   &-tab-prev {
     left: 0;
-    &-icon:before {
-      content: "\e620";
-    }
     :root & {
       filter: none;
     }
@@ -205,6 +197,7 @@
       font-weight: 500;
     }
   }
+
   &-large {
     > .@{tab-prefix-cls}-bar {
         .@{tab-prefix-cls}-nav-container {
@@ -315,25 +308,19 @@
         width: 2px;
         left: auto;
         height: auto;
-        top: 0;
+        bottom: auto;
       }
 
       .@{tab-prefix-cls}-tab-next {
         width: 100%;
         bottom: 0;
         height: @tab-scrolling-size;
-        &-icon:before {
-          content: "\e61d";
-        }
       }
 
       .@{tab-prefix-cls}-tab-prev {
         top: 0;
         width: 100%;
         height: @tab-scrolling-size;
-        &-icon:before {
-          content: "\e61e";
-        }
       }
     }
 
